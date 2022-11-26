@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.main`
-  width: 100%;
-  max-width: 864px;
+export const HomeContent = styled.main`
   margin: 4.5rem auto 0;
 
-  header {
+  > header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,9 +24,13 @@ export const HomeContainer = styled.main`
 
 export const GridIssues = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(24.5rem, 1fr));
 
   gap: 2rem;
 
   margin: 3rem 0 14.625rem;
+
+  > a {
+    text-decoration: none;
+  }
 `

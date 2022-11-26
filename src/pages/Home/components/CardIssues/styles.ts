@@ -1,16 +1,23 @@
 import styled from 'styled-components'
 
-export const CardIssuesContainer = styled.div`
+export const CardIssueContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem;
 
-  height: 260px;
+  height: 16.25rem;
 
   background: ${(props) => props.theme['cs-base-post']};
+  border: 2px solid transparent;
   border-radius: 10px;
 
-  > div {
+  transition: border 0.2s;
+
+  &:hover {
+    border: 2px solid ${(props) => props.theme['cs-base-label']};
+  }
+
+  > header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -22,6 +29,11 @@ export const CardIssuesContainer = styled.div`
       color: ${(props) => props.theme['cs-base-title']};
       font-size: ${(props) => props.theme['ts-title-M']};
       line-height: 160%;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
     span {
@@ -29,16 +41,17 @@ export const CardIssuesContainer = styled.div`
       color: ${(props) => props.theme['cs-base-span']};
       font-size: ${(props) => props.theme['ts-text-S']};
       line-height: 160%;
+      max-width: 7rem;
     }
   }
 
-  p {
+  > p {
     margin-top: 1.25rem;
     color: ${(props) => props.theme['cs-base-text']};
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
+
     overflow: hidden;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 `

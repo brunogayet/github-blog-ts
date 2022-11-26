@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
 export const ProfileContainer = styled.section`
-  width: 100%;
-  max-width: 864px;
-  margin: 0 auto;
   margin-top: -5.25rem;
   padding: 2rem;
 
@@ -61,9 +58,10 @@ export const ProfileInfo = styled.div`
     }
 
     > div {
-      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
 
       padding: 0.21875rem 0;
+      transition: border-color 0.2s;
 
       &:hover {
         border-bottom: 1px solid ${(props) => props.theme['cs-brand-blue']};
@@ -76,27 +74,27 @@ export const ProfileInfo = styled.div`
     font-size: ${(props) => props.theme['ts-text-M']};
     line-height: 160%;
   }
+`
 
-  footer {
-    padding-top: 1.5rem;
+export const ProfileFooter = styled.footer`
+  padding-top: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+
+  > div {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 0.5rem;
 
-    > div {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    svg {
+      color: ${(props) => props.theme['cs-base-label']};
+      font-size: 18px;
+    }
 
-      svg {
-        color: ${(props) => props.theme['cs-base-label']};
-        font-size: 18px;
-      }
-
-      span {
-        color: ${(props) => props.theme['cs-base-subtitle']};
-        font-size: ${(props) => props.theme['ts-text-M']};
-        line-height: 160%;
-      }
+    span {
+      color: ${(props) => props.theme['cs-base-subtitle']};
+      font-size: ${(props) => props.theme['ts-text-M']};
+      line-height: 160%;
     }
   }
 `

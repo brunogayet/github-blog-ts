@@ -1,7 +1,12 @@
-import { useEffect, useState } from 'react'
-import { api } from '../../lib/axios'
+import { useCallback, useEffect, useState } from 'react'
+import { api } from '../../../../lib/axios'
 
-import { ProfileContainer, ProfileContent, ProfileInfo } from './styles'
+import {
+  ProfileContainer,
+  ProfileContent,
+  ProfileFooter,
+  ProfileInfo,
+} from './styles'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -24,7 +29,7 @@ interface ProfileProps {
 export function Profile() {
   const [profile, setProfile] = useState<ProfileProps>({} as ProfileProps)
 
-  const getProfileInfo = async () => {
+  const fetchProfile = useCallback(async () => {
     const {
       data: {
         name,
@@ -46,11 +51,11 @@ export function Profile() {
       company,
       url,
     })
-  }
+  }, [])
 
   useEffect(() => {
-    getProfileInfo()
-  }, [])
+    fetchProfile()
+  }, [fetchProfile])
 
   return (
     <ProfileContainer>
@@ -61,7 +66,7 @@ export function Profile() {
           <header>
             <h1>{profile.name}</h1>
             <div>
-              <a href={profile.url}>
+              <a href={profile.url} target="_blank" rel="noreferrer">
                 <span>GITHUB</span>
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </a>
@@ -70,7 +75,7 @@ export function Profile() {
 
           <p>{profile.bio}</p>
 
-          <footer>
+          <ProfileFooter>
             <div>
               <FontAwesomeIcon icon={faGithub} />
               <span>{profile.login}</span>
@@ -89,7 +94,7 @@ export function Profile() {
                 {profile.following} seguidor{profile.following > 1 && 'es'}
               </span>
             </div>
-          </footer>
+          </ProfileFooter>
         </ProfileInfo>
       </ProfileContent>
     </ProfileContainer>
