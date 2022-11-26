@@ -6,7 +6,7 @@
 
 <p align="center">
    <a href="https://github.com/brunogayet">
-    <img src="https://avatars.githubusercontent.com/u/6998981?v=4" alt="Author">
+    <img src="https://avatars.githubusercontent.com/u/6998981?v=4" width="64px" alt="Author">
    </a>
 </p>
 
