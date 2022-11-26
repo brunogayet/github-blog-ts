@@ -2,7 +2,7 @@
     <img src="src/assets/logo.svg" alt="">
 </h1>
 
-<p align="center">Github Blog built with ReactJS</p>
+<p align="center">Github blog built with ReactJS</p>
 
 <p align="center">GitHub blog project is based on creating an application with ReactJS consuming the GitHub API to show issues instead of the conventional posts. The challenge was purposed by Rocketseat company.</p>
 
