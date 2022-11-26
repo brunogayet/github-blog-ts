@@ -34,7 +34,7 @@ This project was developed with the following technologies:
 ## 💻  Getting started
 
 ```bash
-# Clone this repository
+# Clone repository
 $ git clone https://github.com/gustavonobrega/challenge-github-blog
 
 # Go into the repository
@@ -43,7 +43,7 @@ $ cd github-blog-ts
 # Install dependencies
 $ npm i or npm install
 
-# Run the app
+# Run the application
 $ npm run dev
 ```
 
